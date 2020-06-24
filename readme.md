@@ -1,0 +1,1 @@
+npm install --save git+ssh://git@bitbucket.org/vitaliy_kovalenko/vue-md-form.git
