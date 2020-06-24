@@ -1,0 +1,30 @@
+{
+  "code": "id",
+  "messages": {
+    "alpha": "hanya boleh mengandung karakter alfabet",
+    "alpha_num": "hanya boleh mengandung karakter alfanumerik",
+    "alpha_dash": "boleh mengandung karakter alfanumerik, tanda hubung, dan garis bawah",
+    "alpha_spaces": "hanya boleh berisi karakter alfabet serta spasi",
+    "between": "harus di antara {min} dan {max}",
+    "confirmed": "tidak cocok dengan {target}",
+    "digits": "harus berupa {length} digit angka",
+    "dimensions": "harus berdimensi lebar {width} pixel dan tinggi {height} pixel",
+    "email": "harus berupa alamat surel yang benar",
+    "excluded": "harus berupa nilai yang sah",
+    "ext": "harus berupa berkas yang benar",
+    "image": "harus berupa gambar",
+    "integer": "harus berupa bilangan bulat",
+    "length": "Panjang harus tepat {length}",
+    "max_value": "Nilai tidak boleh lebih dari {max}",
+    "max": "tidak boleh lebih dari {length} karakter",
+    "mimes": "Tipe berkas harus benar",
+    "min_value": "Nilai tidak boleh kurang dari {min}",
+    "min": "minimal mengandung {length} karakter",
+    "numeric": "harus berupa angka",
+    "oneOf": "harus berupa nilai yang sah",
+    "regex": "Format salah",
+    "required": "harus diisi",
+    "required_if": "harus diisi",
+    "size": "harus lebih kecil dari {size}KB"
+  }
+}

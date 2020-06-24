@@ -1,0 +1,28 @@
+{
+  "code": "hr",
+  "messages": {
+    "alpha": "može sadržavati samo abecedne znakove",
+    "alpha_num": "može sadržavati samo alfanumeričke znakove",
+    "alpha_dash": "može sadržavati alfanumeričke znakove kao i crtice i podvlake",
+    "alpha_spaces": "može sadržavati samo abecedne znakove kao i razmake",
+    "between": "mora biti između {min} i {max}",
+    "confirmed": "Potvrda ne odgovara",
+    "digits": "mora biti numerički i točno sadrživati {length} znamenke",
+    "dimensions": "mora biti {width} piksela za {height} piksela",
+    "email": "mora biti važeća e-pošta",
+    "excluded": "Vrijednost mora biti važeća vrijednost",
+    "ext": "mora biti važeća datoteka",
+    "image": "mora biti slika",
+    "max_value": "Vrijednost mora biti {max} ili manje",
+    "max": "ne smije biti veći od {length} znakova",
+    "mimes": "mora imati valjanu vrstu datoteke",
+    "min_value": "Vrijednost mora biti {min} ili više",
+    "min": "mora biti barem {length} znakova",
+    "numeric": "može sadrživati samo numeričke znakove",
+    "oneOf": "Vrijednost mora biti važeća vrijednost",
+    "regex": "Oblik nije važeći",
+    "required": "Polje je obavezno",
+    "required_if": "Polje je obavezno",
+    "size": "mora biti manje od {size}KB"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "code": "et",
+  "messages": {
+    "alpha": "võib sisaldada ainult tähti",
+    "alpha_num": "võib sisaldada ainult tähti ja numbreid",
+    "alpha_dash": "võib sisaldada ainult tähti, numbreid, kriipse ja alakriipse",
+    "alpha_spaces": "võib sisaldada ainult tähti ja tühikuid",
+    "between": "peab jääma vahemikku {min} kuni {max}",
+    "confirmed": "on kontrollist erinev",
+    "digits": "peab koosnema täpselt {length}-st numbrist",
+    "dimensions": "peab olema {width} korda {height} pikslit suur",
+    "email": "peab olema e-maili aadress",
+    "excluded": "ei oma sobivat väärtust",
+    "ext": "peab olema sobiv fail",
+    "image": "peab olema pilt",
+    "max_value": "peab olema {max} või väisem",
+    "max": "ei tohi olla pikem kui {length} tähemärki",
+    "mimes": "peab olema sobivat tüüpi fail",
+    "min_value": "peab olema {min} või suurem",
+    "min": "peab olema vähemalt {length} tähemärki pikk",
+    "numeric": "võib sisaldada ainult numbreid",
+    "oneOf": "ei oma sobivat väärtust",
+    "regex": "pole sobival kujul",
+    "required": "on nõutud väli",
+    "required_if": "on nõutud väli",
+    "size": "peab olema väiksem kui {size}KB"
+  }
+}

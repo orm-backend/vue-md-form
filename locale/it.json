@@ -1,0 +1,31 @@
+{
+  "code": "it",
+  "messages": {
+    "alpha": "Il campo può contenere solo caratteri alfabetici",
+    "alpha_num": "Il campo può contenere solo caratteri alfanumerici",
+    "alpha_dash": "Il campo può contenere caratteri alfa-numerici così come lineette e trattini di sottolineatura",
+    "alpha_spaces": "Il campo può contenere solo caratteri alfanumerici così come spazi",
+    "between": "Il campo deve essere compreso tra {min} e {max}",
+    "confirmed": "Il campo non corrisponde",
+    "digits": "Il campo deve essere numerico e contenere esattamente {length} cifre",
+    "dimensions": "Il campo deve essere {width} x {height}",
+    "email": "Il campo deve essere un indirizzo email valido",
+    "excluded": "Il campo deve avere un valore valido",
+    "ext": "Il campo deve essere un file valido",
+    "image": "Il campo deve essere un'immagine",
+    "integer": "Il campo deve essere un numero",
+    "is_not": "Il campo non è valido",
+    "length": "La lunghezza del campo deve essere {length}",
+    "max_value": "Il campo deve essere minore o uguale a {max}",
+    "max": "Il campo non può essere più lungo di {length} caratteri",
+    "mimes": "Il campo deve avere un tipo di file valido",
+    "min_value": "Il campo deve essere maggiore o uguale a {min}",
+    "min": "Il campo deve avere almeno {length} caratteri",
+    "numeric": "Il campo può contenere solo caratteri numerici",
+    "oneOf": "Il campo deve avere un valore valido",
+    "regex": "Il campo non ha un formato valido",
+    "required": "Il campo è richiesto",
+    "required_if": "Il campo è richiesto",
+    "size": "Il campo deve essere inferiore a {size}KB"
+  }
+}

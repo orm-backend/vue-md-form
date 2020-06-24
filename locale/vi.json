@@ -1,0 +1,28 @@
+{
+  "code": "vi",
+  "messages": {
+    "alpha": "chỉ có thể chứa các kí tự chữ",
+    "alpha_dash": "có thể chứa các kí tự chữ (A-Z a-z), số (0-9), gạch ngang (-) và gạch dưới (_)",
+    "alpha_num": "chỉ có thể chứa các kí tự chữ và số",
+    "alpha_spaces": "chỉ có thế chứa các kí tự và khoảng trắng",
+    "between": "phải có giá trị nằm trong khoảng giữa {min} và {max}",
+    "confirmed": "khác với {target}",
+    "digits": "Trường chỉ có thể chứa các kí tự số và bắt buộc phải có độ dài là {length}",
+    "dimensions": "phải có chiều rộng {width} pixels và chiều cao {height} pixels",
+    "email": "phải là một địa chỉ email hợp lệ",
+    "excluded": "không phải là một giá trị hợp lệ",
+    "ext": "phải là một tệp",
+    "image": "Trường phải là một ảnh",
+    "oneOf": "không phải là một giá trị hợp lệ",
+    "max": "không thể có nhiều hơn {length} kí tự",
+    "max_value": "phải nhỏ hơn hoặc bằng {max}",
+    "mimes": "phải chứa kiểu tệp phù hợp",
+    "min": "phải chứa ít nhất {length} kí tự",
+    "min_value": "phải lớn hơn hoặc bằng {min}",
+    "numeric": "chỉ có thể có các kí tự số",
+    "regex": "có định dạng không đúng",
+    "required": "là bắt buộc",
+    "required_if": "là bắt buộc",
+    "size": "chỉ có thể chứa tệp nhỏ hơn {size}KB"
+  }
+}

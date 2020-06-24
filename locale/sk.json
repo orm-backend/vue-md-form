@@ -1,0 +1,28 @@
+{
+  "code": "sk",
+  "messages": {
+    "alpha": "môže obsahovať len písmená",
+    "alpha_dash": "môže obsahovať len písmená, číslice, bodky a podčiarknutie",
+    "alpha_num": "môže obsahovať len písmená a číslice",
+    "alpha_spaces": "môže obsahovať len písmená, číslice a medzery",
+    "between": "Položka musí byť medzi {min} a {max}",
+    "confirmed": "Hodnota položky nie je rovnaká",
+    "digits": "Položka musí obsahovať {length} {length < 5 ? 'čísla' : 'čísiel'}",
+    "dimensions": "Položka musí mať {width} x {height} pixlov",
+    "email": "Položka musí obsahovať správnu emailovú adresu",
+    "excluded": "Položka má nesprávnu hodnotu",
+    "ext": "nie je platný súbor",
+    "image": "nie je obrázok",
+    "oneOf": "Položka má nesprávnu hodnotu",
+    "max": "Položka môže obsahovať najviac {length} znakov",
+    "max_value": "Položka musí byť maximálne {max}",
+    "mimes": "Položka obsahuje nesprávny typ súboru",
+    "min": "Položka musí obsahovať minimálne {length} {length < 4 ? 'znaky' : 'znakov'}",
+    "min_value": "Položka musí byť minimálne {min}",
+    "numeric": "Položka môže obsahovať len číslice",
+    "regex": "Formát položky je nesprávny",
+    "required": "Položka je povinná",
+    "required_if": "Položka je povinná",
+    "size": "Položka musí byť menej ako {size}KB"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "code": "de",
+  "messages": {
+    "alpha": "darf nur alphabetische Zeichen enthalten",
+    "alpha_dash": "darf alphanumerische Zeichen sowie Striche und Unterstriche enthalten",
+    "alpha_num": "darf nur alphanumerische Zeichen enthalten",
+    "alpha_spaces": "darf nur alphanumerische Zeichen und Leerzeichen enthalten",
+    "between": "muss zwischen {min} und {max} liegen",
+    "confirmed": "Die Bestätigung von stimmt nicht überein",
+    "digits": "muss numerisch sein und exakt {length} Ziffern enthalten",
+    "dimensions": "muss {width} x {height} Bildpunkte groß sein",
+    "email": "muss eine gültige E-Mail-Adresse sein",
+    "excluded": "muss ein gültiger Wert sein",
+    "ext": "muss eine gültige Datei sein",
+    "image": "muss eine Grafik sein",
+    "oneOf": "muss ein gültiger Wert sein",
+    "integer": "muss eine ganze Zahl sein",
+    "length": "Die Länge von muss {length} sein",
+    "max": "darf nicht länger als {length} Zeichen sein",
+    "max_value": "darf maximal {max} sein",
+    "mimes": "muss einen gültigen Dateityp haben",
+    "min": "muss mindestens {length} Zeichen lang sein",
+    "min_value": "muss mindestens {min} sein",
+    "numeric": "darf nur numerische Zeichen enthalten",
+    "regex": "Das Format von ist ungültig",
+    "required": "ist ein Pflichtfeld",
+    "required_if": "ist ein Pflichtfeld",
+    "size": "muss kleiner als {size}KB sein"
+  }
+}

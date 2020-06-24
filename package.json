@@ -1,20 +1,46 @@
 {
   "name": "vue-md-form",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+  "description": "Dropzone, Bitmask field and form validation. Server side template support.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vitaliy Kovalenko",
+    "email": "vvk@kola.cloud"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+  "license": "MIT",
+  "main": "dist/vue-md-form.umd.js",
+  "module": "dist/vue-md-form.esm.js",
+  "unpkg": "dist/vue-md-form.min.js",
+  "scripts": {
+    "dev": "npm run build:unpkg & npm run build:umd & npm run build:es",
+    "prod": "npm --production run build:unpkg & npm --production run build:umd & npm --production run build:es",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-md-form.min.js",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-md-form.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-md-form.esm.js"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-async-to-generator": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "@rollup/plugin-babel": "^5.0.4",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-inject": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "core-js": "^3.6.5",
+    "rollup": "^2.18.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^2.1.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-vue": "^5.0.1"
+  },
+  "dependencies": {
+    "vee-validate": "^3.3.5",
+    "vue": "^2.6.11",
+    "vue-material": "^1.0.0-beta-14",
+    "vue-template-compiler": "^2.6.11",
+    "vue2-dropzone": "^3.6.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
 }

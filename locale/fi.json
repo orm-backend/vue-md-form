@@ -1,0 +1,25 @@
+{
+  "code": "fi",
+  "messages": {
+    "alpha": "voi sisältää vain kirjaimia",
+    "alpha_dash": "voi sisältää vain kirajimia, numeroita, ja tavu-, tai alaviivoja",
+    "alpha_num": "voi sisältää vain kirjaimia ja numeroita",
+    "between": "Kentän tulee olla {min} ja {max} väliltä",
+    "confirmed": "ei vastannut {target}",
+    "digits": "tulee olla numeerinen ja tarkalleen {length} merkkiä",
+    "dimensions": "tulee olla {width} pikseliä kertaa {height} pikseliä",
+    "email": "tulee olla kelvollinen sähköpostiosoite",
+    "excluded": "tulee olla kelvollinen arvo",
+    "ext": "tulee olla kelvollinen tiedosto",
+    "image": "tulee olla kelvollinen kuva",
+    "max": "ei saa olla pidempi kuin {length} merkkiä",
+    "mimes": "tulee olla kelvollinen tiedostotyyppi",
+    "min": "tulee olla vähintään {length} merkkiä",
+    "numeric": "voi sisältää vain numeroita",
+    "oneOf": "tulee olla kelvollinen arvo",
+    "regex": "tulee olla kelvollinen säännöllinen lauseke",
+    "required": "on pakollinen kenttä",
+    "required_if": "on pakollinen kenttä",
+    "size": "tulee olla vähemmän kuin {size}KB"
+  }
+}

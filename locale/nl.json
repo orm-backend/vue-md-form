@@ -1,0 +1,30 @@
+{
+  "code": "nl",
+  "messages": {
+    "alpha": "mag alleen letters bevatten",
+    "alpha_dash": "mag alleen letters, nummers, en streepjes bevatten",
+    "alpha_num": "mag alleen letters en nummers bevatten",
+    "alpha_spaces": "mag alleen letters en spaties bevatten",
+    "between": "moet tussen {min} en {max} liggen",
+    "confirmed": "bevestiging komt niet overeen",
+    "digits": "moet een nummer zijn en exact {length} tekens bevatten",
+    "dimensions": "moet {width} pixels breed zijn en {height} pixels hoog",
+    "email": "moet een geldig e-mailadres zijn",
+    "excluded": "is ongeldig",
+    "ext": "moet een geldig bestand zijn",
+    "image": "moet een afbeelding zijn",
+    "integer": "moet een nummer zijn",
+    "length": "moet {length} karakters zijn",
+    "max": "mag niet groter zijn dan {length} karakters",
+    "max_value": "mag maximaal {max} zijn",
+    "mimes": "moet een geldig bestandstype hebben",
+    "min": "moet minimaal {length} karakters zijn",
+    "min_value": "moet minimaal {min} zijn",
+    "numeric": "mag alleen nummers bevatten",
+    "oneOf": "moet een geldige waarde zijn",
+    "regex": "formaat is ongeldig",
+    "required": "is verplicht",
+    "required_if": "is verplicht",
+    "size": "mag niet groter zijn dan {size}KB"
+  }
+}

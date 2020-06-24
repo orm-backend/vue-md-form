@@ -1,0 +1,28 @@
+{
+  "code": "sv",
+  "messages": {
+    "alpha": "Fältet får bara innehålla alfabetiska tecken",
+    "alpha_dash": "Fältet får bara innehålla alfanumeriska tecken såväl som snedstreck och understreck",
+    "alpha_num": "Fältet får bara innehålla alfanumeriska tecken",
+    "alpha_spaces": "Fältet får bara innehålla alfabetiska tecken och mellanslag",
+    "between": "Fältet måste vara mellan {min} och {max}",
+    "confirmed": "Fältet matchar inte {target}",
+    "digits": "Fältet måste vara numeriskt och innehålla exakt {length} siffor",
+    "dimensions": "Fältet måste vara {width} pixlar bred och {height} pixlar hög",
+    "email": "Fältet måste vara en giltig e-postadress",
+    "excluded": "Fältet måste vara ett godkänt alternativ",
+    "ext": "Fältet måste vara en godkänd fil",
+    "image": "Fältet måste vara en bildfil",
+    "integer": "Fältet måste vara ett heltal",
+    "length": "Fältet måste vara {length} långt",
+    "oneOf": "Fältet måste vara ett godkänt alternativ",
+    "max": "Fältet får inte vara längre än {length} tecken",
+    "mimes": "Fältet måste ha en filändelse",
+    "min": "Fältet måste minst vara {length} tecken",
+    "numeric": "Fältet får bara innehålla numeriska tecken",
+    "regex": "Fältet har en felaktig formatering",
+    "required": "Fältet är obligatoriskt",
+    "required_if": "Fältet är obligatoriskt",
+    "size": "Fältet måste vara mindre än {size}KB"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "code": "tr",
+  "messages": {
+    "alpha": "yalnızca harf içerebilir",
+    "alpha_dash": "alanı harf ve tire (-) ya da alttan tire (_) içerebilir",
+    "alpha_num": "yalnızca harf ve rakam içerebilir",
+    "alpha_spaces": "yalnızca harf boşluk (space) içerebilir",
+    "between": "{min} ile {max} aralığında olmalıdır",
+    "confirmed": "doğrulaması hatalı",
+    "digits": "sayısal ve {length} basamaklı olmalıdır",
+    "dimensions": "alanı {width} piksel ile {height} piksel arasında olmalıdır",
+    "email": "alanının geçerli bir e-posta olması gerekir",
+    "excluded": "alanına geçerli bir değer giriniz",
+    "ext": "alanı geçerli bir dosya olmalıdır",
+    "image": "alanı resim dosyası olmalıdır",
+    "oneOf": "alanına geçerli bir değer giriniz",
+    "max": "alanı {length} karakterden fazla olmamalıdır",
+    "max_value": "alanı {max} ya da daha az bir değer olmalıdır",
+    "mimes": "geçerli bir dosya olmalıdır",
+    "min": "alanına en az {length} karakter girilmelidir",
+    "min_value": "alanı {min} ya da daha fazla bir değer olmalıdır",
+    "numeric": "alanına sayısal bir değer giriniz",
+    "regex": "formatı geçersiz",
+    "required": "alanı gereklidir",
+    "required_if": "alanı gereklidir",
+    "size": "alanı {size}KB'dan daha az olmalıdır"
+  }
+}

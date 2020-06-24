@@ -1,0 +1,30 @@
+{
+  "code": "eu",
+  "messages": {
+    "alpha": "eremuak soilik karaktere alfabetikoak eduki ditzake",
+    "alpha_dash": "eremuak karaktere alfanumerikoak, marrak eta azpimarrak eduki ditzake",
+    "alpha_num": "eremuak soilik karaktere alfanumerikoak eduki ditzake",
+    "alpha_spaces": "eremuak soilik karaktere alfanumerikoak eta zuriuneak eduki ditzake",
+    "between": "eremuak {min} eta {max} artean egon behar du",
+    "confirmed": "berrespenak ez datoz bat",
+    "digits": "eremuak zenbakizkoa izan behar du eta zehazki {length} digitu izan behar ditu",
+    "dimensions": "eremuak {width} pixel bider {height} pixel izan behar du",
+    "email": "eremuak baliozko helbide elektroniko bat izan behar du",
+    "excluded": "eremuak baliozko balio bat izan behar du",
+    "ext": "eremuak baliozko fitxategi bat izan behar du",
+    "image": "eremuak irudi bat izan behar du",
+    "integer": "eremuak zenbaki oso bat izan behar du",
+    "length": "{_field_}(r)en luzerak {length} izan behar du",
+    "max_value": "eremuak {max} edo gutxiago izan behar du",
+    "max": "eremuak ezin ditu {length} karaktere baino gehiago izan",
+    "mimes": "eremuak baliozko fitxategi-mota bat izan behar du",
+    "min_value": "eremuak {min} edo gehiago izan behar du",
+    "min": "eremuak gutxienez {length} karaktere izan behar ditu",
+    "numeric": "eremuak zenbakizko karaktereak soilik izan ditzake",
+    "oneOf": "eremuak baliozko balio bat izan behar du",
+    "regex": "eremuaren formatua baliogabea da",
+    "required": "eremua derrigorrezkoa da",
+    "required_if": "eremua derrigorrezkoa da",
+    "size": "{_field_}(e)n tamainak {size}KB baino txikiagoa izan behar du"
+  }
+}

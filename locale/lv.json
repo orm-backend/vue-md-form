@@ -1,0 +1,30 @@
+{
+  "code": "lv",
+  "messages": {
+    "alpha": " Laukā var ievadīt tikai burtus",
+    "alpha_num": "Laukā var ievadīt tikai burtus un ciparus",
+    "alpha_dash": "Laukā var ievadīt tikai burtus, ciparus, domuzīmes un pasvītras",
+    "alpha_spaces": "Laukā var ievadīt tikai burtus un atstarpes",
+    "between": "Lauka vērtībai jābūt intervālā starp {min} un {max}",
+    "confirmed": "Apstiprinājuma lauka vērtība nav korekta",
+    "digits": "Lauka vērtību veido precīzs {length} ciparu skaits",
+    "dimensions": "Lauka  izmērs ir {width} pikseļu platumā un {height} pikseļu augstumā",
+    "email": "Lauka vērtībai jābūt derīgai e-pasta adresei",
+    "excluded": "Laukā jāievada derīga vērtība",
+    "ext": "Lauka vērtībai jābūt failam",
+    "image": "Lauka vērtībai jābūt attēlam",
+    "integer": "Lauka vērtībai jābūt veselam skaitlim",
+    "length": "Lauka garumam jābūt {length}",
+    "max_value": "Lauka vērtībai jābūt {max} vai mazākai",
+    "max": "Laukā nevar ievadīt vairāk nekā {length} rakstzīmes",
+    "mimes": "Lauka vērtībai jābūt failam",
+    "min_value": "Laukā izmanto minimālo vērtību {min} vai lielāku",
+    "min": "Laukā jāievada vismaz {length} rakstzīmes",
+    "numeric": "Laukā var ievadīt tikai ciparus",
+    "oneOf": "Lauka vērtībai jābūt derīgai",
+    "regex": "Lauka formāts nav korekts",
+    "required": "Lauks ir obligāti aizpildāms",
+    "required_if": "Lauks ir obligāti aizpildāms",
+    "size": "Lauka lielumam jābut mazākam nekā {size}KB"
+  }
+}
