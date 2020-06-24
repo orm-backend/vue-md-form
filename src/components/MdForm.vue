@@ -1,9 +1,3 @@
-<template>
-	<div>
-		<slot />
-	</div>
-</template>
-
 <script>
 import vue2Dropzone from 'vue2-dropzone'
 import FormData from './FormData.vue'
