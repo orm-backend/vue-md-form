@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+	<link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/default.css">
+	<link rel="stylesheet" href="/itaces-form.css">
+	<style>
+	.center {
+	    max-width: 1280px;
+	    width: 100%;
+	    -webkit-box-flex: 1;
+	    flex-grow: 1;
+	    margin: 0 auto;
+	    padding: 30px 0 50px;
+	    background: #eef1f1;
+	}
+	.container {
+	    max-width: 1216px;
+	    min-height: calc(100vh - 246px);
+	    margin: 0 auto;
+	    position: relative;
+	    border-radius: 5px;
+	    background: #fff;
+	    padding: 32px;
+	    box-shadow: 0 0 10px 5px #ddd;
+	}
+	</style>
+	<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js" defer></script>
+	<script src="https://unpkg.com/vue-material" defer></script>
+	<script src="https://unpkg.com/vee-validate@3.3.5/dist/vee-validate.full.min.js" defer></script>
+	<script src="/itaces-form.umd.js" defer></script>
+	<script src="/demo.js" defer></script>
+</head>
+<body>
+<div class="center">
+	<div id="app" class="container">
+		<itaces-form inline-template>
+			<itaces-form-data ref="formData" action="/post/action/url" style="visibility: hidden;">
+				<div class="md-layout md-gutter">
+					<div class="md-layout-item md-size-20 md-small-size-30 md-xsmall-size-50">
+						<validation-provider
+							name="Image"
+							rules="mimes:image/jpeg,image/png,image/gif|size:2000"
+							v-slot="{ errors, validate }"
+							slim bails>
+						    <md-field class="img-field"
+								:class="{ 'md-invalid': errors.length }"
+								md-clearable>
+						        <label>Image</label>
+						        <itaces-image-dropzone
+									v-model="room.image"
+									:name="'app-model-room[image]'"
+									accept="image/png,image/jpeg"
+									max-size="2"
+									@input="validate"
+									required>
+						        </itaces-image-dropzone>
+						        <span class="md-helper-text">The maximum file size is 2 MB.</span>
+						        <span class="md-error">{{ errors[0] }}</span>
+						    </md-field>
+						</validation-provider>
+					</div>
+					<div class="md-layout-item md-size-40 md-small-size-50 md-xsmall-size-100">
+						<validation-provider
+							name="Facilities"
+							rules="integer"
+							v-slot="{ errors, validate }"
+							slim bails>
+							<itaces-bitmask
+								:name="'app-model-room[facilities]'"
+								v-model="room.facilities"
+								v-slot="{ values, disabled }"
+								@input="validate"
+								md-clearable>
+								<label>Facilities</label>
+								<div class="bitmask-checkboxes">
+									<md-checkbox
+										v-for="facility in $options.facilitiesAvailable"
+										v-model="values"
+										:key="facility.code"
+										:value="facility.value"
+										:disabled="disabled">{{facility.name}}</md-checkbox>
+								</div>
+								<div class="bitmask-messages">
+									<span class="md-helper-text">Helper text</span>
+									<span class="md-error">{{ errors[0] }}</span>
+								</div>
+							</itaces-bitmask>
+						</validation-provider>
+					</div>
+				</div>
+			</itaces-form-data>
+		</itaces-md-form>
+	</div>
+</div>
+<script>
+window.app = {
+	data: {
+		room: {
+			image: null,
+			facilities: 0
+		}
+	},
+	options: {
+		localeUrl: "/assets/form/locale",
+		facilitiesAvailable: [
+			{code: 'breakfast', name: 'Breakfast', value: 2},
+			{code: 'wifi', name: 'Wi-fi', value: 4},
+			{code: 'conditioning', name: 'Air conditioning', value: 8},
+			{code: 'ocean', name: 'Ocean view', value: 16},
+			{code: 'partialocean', name: 'Partial ocean view', value: 32}
+		]
+	}
+}
+</script>
+</body>
+</html>

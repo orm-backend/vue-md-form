@@ -47,7 +47,7 @@ mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.css', 'public/assets/css
 <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/default.css">
 <link rel="stylesheet" href="/assets/css/vue-md-form.min.css">
 
-<script src="https://unpkg.com/vue" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11" defer></script>
 <script src="https://unpkg.com/vue-material" defer></script>
 <script src="https://unpkg.com/vee-validate@3.3.5/dist/vee-validate.full.min.js" defer></script>
 ```

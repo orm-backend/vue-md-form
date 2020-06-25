@@ -1,11 +1,11 @@
 // Импорт vue компонента
-import MdForm from './components/MdForm.vue';
+import ItacesForm from './components/ItacesForm.vue';
 
 // Объявление функции установки, выполняемой Vue.use()
 export function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('MdForm', MdForm);
+  Vue.component('ItacesForm', ItacesForm);
 }
 
 // Создание значения модуля для Vue.use()
@@ -25,4 +25,4 @@ if (GlobalVue) {
 }
 
 // Экспорт компонента, для использования в качестве модуля (npm/webpack/etc.)
-export default MdForm;
+export default ItacesForm;

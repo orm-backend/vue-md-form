@@ -1,6 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs'; // Конвертирование CommonJS модулей в ES6
 import vue from 'rollup-plugin-vue'; // Обработка однофайловых компонентов .vue
-import babel from '@rollup/plugin-babel'; // Транспиляция/добавление полифилов для умеренной поддержки браузеров
+//import babel from '@rollup/plugin-babel'; // Транспиляция/добавление полифилов для умеренной поддержки браузеров
 import css from 'rollup-plugin-css-only';
 import resolve from '@rollup/plugin-node-resolve';
 import inject from '@rollup/plugin-inject';
@@ -35,7 +35,7 @@ export default {
     inject({
       vue2Dropzone: 'vue2-dropzone'
     }),
-    babel({
+/*    babel({
 	  presets: [
         [
 	      "@babel/preset-env",
@@ -60,7 +60,7 @@ export default {
       ],
       babelHelpers: 'bundled',
       plugins: ["@babel/plugin-transform-async-to-generator"]
-    }),
+    }),*/
     isProduction && terser()
   ]
 };
