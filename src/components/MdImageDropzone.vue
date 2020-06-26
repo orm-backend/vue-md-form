@@ -37,7 +37,7 @@
 
 <script>
 export default {
-	name: "ItacesImageDropzone",
+	name: "MdImageDropzone",
 	props: {
 		placeholder: {
 			type: String,

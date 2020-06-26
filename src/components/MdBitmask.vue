@@ -29,7 +29,7 @@
 
 <script>
 export default {
-	name: "ItacesBitmask",
+	name: "MdBitmask",
 	props: {
 		id: {
 			type: String,

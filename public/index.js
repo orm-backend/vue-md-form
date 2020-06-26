@@ -1,6 +1,5 @@
-
 document.addEventListener("DOMContentLoaded", function() {
-	Object.defineProperty(Vue.prototype,"$bus",{
+	Object.defineProperty(Vue.prototype, "$bus", {
 		get: function() {
 			return this.$root.bus;
 		}
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		el: '#app',
 
 		components: {
-			'itaces-form': ItacesForm
+			'md-form': MdForm
 		},
 
 		data: function () {

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
 	<link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/default.css">
-	<link rel="stylesheet" href="/itaces-form.css">
+	<link rel="stylesheet" href="/md-form.css">
 	<style>
 	.center {
 	    max-width: 1280px;
@@ -30,14 +30,14 @@
 	<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js" defer></script>
 	<script src="https://unpkg.com/vue-material" defer></script>
 	<script src="https://unpkg.com/vee-validate@3.3.5/dist/vee-validate.full.min.js" defer></script>
-	<script src="/itaces-form.umd.js" defer></script>
-	<script src="/demo.js" defer></script>
+	<script src="/md-form.js" defer></script>
+	<script src="/index.js" defer></script>
 </head>
 <body>
 <div class="center">
 	<div id="app" class="container">
-		<itaces-form inline-template>
-			<itaces-form-data ref="formData" action="/post/action/url" style="visibility: hidden;">
+		<md-form inline-template>
+			<md-form-data ref="formData" action="/post/action/url" style="visibility: hidden;">
 				<div class="md-layout md-gutter">
 					<div class="md-layout-item md-size-20 md-small-size-30 md-xsmall-size-50">
 						<validation-provider
@@ -49,14 +49,14 @@
 								:class="{ 'md-invalid': errors.length }"
 								md-clearable>
 						        <label>Image</label>
-						        <itaces-image-dropzone
+						        <md-image-dropzone
 									v-model="room.image"
 									:name="'app-model-room[image]'"
 									accept="image/png,image/jpeg"
 									max-size="2"
 									@input="validate"
 									required>
-						        </itaces-image-dropzone>
+						        </md-image-dropzone>
 						        <span class="md-helper-text">The maximum file size is 2 MB.</span>
 						        <span class="md-error">{{ errors[0] }}</span>
 						    </md-field>
@@ -68,7 +68,7 @@
 							rules="integer"
 							v-slot="{ errors, validate }"
 							slim bails>
-							<itaces-bitmask
+							<md-bitmask
 								:name="'app-model-room[facilities]'"
 								v-model="room.facilities"
 								v-slot="{ values, disabled }"
@@ -87,12 +87,12 @@
 									<span class="md-helper-text">Helper text</span>
 									<span class="md-error">{{ errors[0] }}</span>
 								</div>
-							</itaces-bitmask>
+							</md-bitmask>
 						</validation-provider>
 					</div>
 				</div>
-			</itaces-form-data>
-		</itaces-md-form>
+			</md-form-data>
+		</md-md-form>
 	</div>
 </div>
 <script>

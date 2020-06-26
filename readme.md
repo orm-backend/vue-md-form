@@ -33,8 +33,8 @@
 
 ```JavaScript
 mix.copyDirectory('node_modules/vee-validate/dist/locale', 'public/assets/locale');
-mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.js', 'public/assets/js/vue-md-form.min.js')
-mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.css', 'public/assets/css/vue-md-form.min.css')
+mix.copy('node_modules/vue-md-form/dist/md-form.min.js', 'public/assets/js/md-form.min.js')
+mix.copy('node_modules/vue-md-form/dist/md-form.css', 'public/assets/css/md-form.css')
 ```
 
 <sup>Pre-built scripts and styles located in node_modules/vue-md-form/dist directory</sup>
@@ -45,7 +45,7 @@ mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.css', 'public/assets/css
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
 <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.min.css">
 <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/default.css">
-<link rel="stylesheet" href="/assets/css/vue-md-form.min.css">
+<link rel="stylesheet" href="/assets/css/md-form.css">
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11" defer></script>
 <script src="https://unpkg.com/vue-material" defer></script>
@@ -53,11 +53,11 @@ mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.css', 'public/assets/css
 ```
 
 ```HTML
-<div id="mdForm">
+<div id="app">
 	<md-form inline-template>
-		<form-data ref="formData" action="/post/action/url">
-			<div class="md-layout">
-				<div class="md-layout-item">
+		<md-form-data ref="formData" action="/post/action/url" style="visibility: hidden;">
+			<div class="md-layout md-gutter">
+				<div class="md-layout-item md-size-20 md-small-size-30 md-xsmall-size-50">
 					<validation-provider
 						name="Image"
 						rules="mimes:image/jpeg,image/png,image/gif|size:2000"
@@ -67,26 +67,26 @@ mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.css', 'public/assets/css
 							:class="{ 'md-invalid': errors.length }"
 							md-clearable>
 					        <label>Image</label>
-					        <image-dropzone
+					        <md-image-dropzone
 								v-model="room.image"
 								:name="'app-model-room[image]'"
 								accept="image/png,image/jpeg"
 								max-size="2"
 								@input="validate"
 								required>
-					        </image-dropzone>
+					        </md-image-dropzone>
 					        <span class="md-helper-text">The maximum file size is 2 MB.</span>
-					        <span class="md-error">@{{ errors[0] }}</span>
+					        <span class="md-error">{{ errors[0] }}</span>
 					    </md-field>
 					</validation-provider>
 				</div>
-				<div class="md-layout-item">
+				<div class="md-layout-item md-size-40 md-small-size-50 md-xsmall-size-100">
 					<validation-provider
 						name="Facilities"
 						rules="integer"
 						v-slot="{ errors, validate }"
 						slim bails>
-						<bitmask
+						<md-bitmask
 							:name="'app-model-room[facilities]'"
 							v-model="room.facilities"
 							v-slot="{ values, disabled }"
@@ -99,22 +99,22 @@ mix.copy('node_modules/vue-md-form/dist/vue-md-form.min.css', 'public/assets/css
 									v-model="values"
 									:key="facility.code"
 									:value="facility.value"
-									:disabled="disabled">@{{facility.name}}</md-checkbox>
+									:disabled="disabled">{{facility.name}}</md-checkbox>
 							</div>
 							<div class="bitmask-messages">
 								<span class="md-helper-text">Helper text</span>
-								<span class="md-error">@{{ errors[0] }}</span>
+								<span class="md-error">{{ errors[0] }}</span>
 							</div>
-						</bitmask>
+						</md-bitmask>
 					</validation-provider>
 				</div>
 			</div>
-		</form-data>
-	<md-form>
+		</md-form-data>
+	</md-md-form>
 </div>
 
 <script>
-window.vue = {
+window.app = {
 	data: {
 		room: {
 			image: null,
@@ -122,7 +122,7 @@ window.vue = {
 		}
 	},
 	options: {
-		localeUrl: "/assets/locale",
+		localeUrl: "/assets/form/locale",
 		facilitiesAvailable: [
 			{code: 'breakfast', name: 'Breakfast', value: 2},
 			{code: 'wifi', name: 'Wi-fi', value: 4},
@@ -138,7 +138,7 @@ window.vue = {
 ### Without compiler
 
 ```HTML
-<script src="/assets/js/vue-md-form.min.js" defer></script>
+<script src="/assets/js/md-form.min.js" defer></script>
 ```
 
 Include form initialisation script aap.js
@@ -151,14 +151,14 @@ With content:
 
 ```javaScript
 document.addEventListener("DOMContentLoaded", function() {
-	Object.defineProperty(Vue.prototype,"$bus",{
+	Object.defineProperty(Vue.prototype, "$bus", {
 		get: function() {
 			return this.$root.bus;
 		}
 	});
 
 	new Vue({
-		el: '#mdForm',
+		el: '#app',
 		components: {
 			'md-form': MdForm
 		},
@@ -174,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ### With webpack
 
 ```JavaScript
+// Component
 import MdForm from 'vue-md-form'
 
 export default {
@@ -184,6 +185,7 @@ export default {
 	}
 }
 
+// Entry point script
 document.addEventListener("DOMContentLoaded", function() {
 	Object.defineProperty(Vue.prototype,"$bus",{
 		get: function() {
@@ -192,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	new Vue({
-		el: '#mdForm',
+		el: '#app',
 		components: {
 			'md-form': MyForm
 		},
@@ -205,5 +207,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
 
+<sup>See example inside package</sup>
 
 

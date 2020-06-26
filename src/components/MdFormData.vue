@@ -14,7 +14,7 @@
 
 <script>
 export default {
-	name: "ItacesFormData",
+	name: "MdFormData",
 	props: {
 		name: String,
 

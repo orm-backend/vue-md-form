@@ -8,64 +8,7 @@
   box-shadow: inset 0 0 0 2px var(--md-theme-default-accent);
 }
 
-/*# sourceMappingURL=ItacesForm.vue.map */.bitmask {
-  margin: 4px 0 24px;
-  font-family: inherit;
-  display: block;
-  position: relative;
-  padding-bottom: 46px;
-}
-.bitmask .bitmask-checkboxes,
-.bitmask .bitmask-messages {
-  position: relative;
-  top: 46px;
-  white-space: normal;
-}
-.bitmask .md-checkbox .md-checkbox-label {
-  padding-left: 8px;
-}
-.bitmask > label {
-  position: absolute;
-  top: 23px;
-  left: 0;
-  pointer-events: none;
-  transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 0.3s;
-  font-size: 16px;
-  line-height: 20px;
-  color: rgba(0, 0, 0, 0.54);
-}
-.bitmask.md-required > label:after {
-  position: absolute;
-  top: 2px;
-  right: 0;
-  transform: translateX(calc(100% + 2px));
-  content: "*";
-  line-height: 1em;
-  vertical-align: top;
-  color: var(--md-theme-default-accent);
-}
-.bitmask .md-helper-text,
-.bitmask .md-error {
-  height: 20px;
-  position: absolute;
-  bottom: -22px;
-  font-size: 12px;
-  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.bitmask .md-helper-text {
-  color: rgba(0, 0, 0, 0.54);
-}
-.bitmask .md-error {
-  color: var(--md-theme-default-fieldvariant, #ff1744);
-}
-.bitmask .md-input-action {
-  position: absolute;
-  top: 16px;
-  right: 0;
-}
-
-/*# sourceMappingURL=ItacesBitmask.vue.map *//*** Dopzone single image input styles  ***/
+/*# sourceMappingURL=MdForm.vue.map *//*** Dopzone single image input styles  ***/
 .md-field.img-field.md-theme-default {
   display: block;
 }
@@ -172,4 +115,61 @@
   bottom: auto;
 }
 
-/*# sourceMappingURL=ItacesImageDropzone.vue.map */
+/*# sourceMappingURL=MdImageDropzone.vue.map */.bitmask {
+  margin: 4px 0 24px;
+  font-family: inherit;
+  display: block;
+  position: relative;
+  padding-bottom: 46px;
+}
+.bitmask .bitmask-checkboxes,
+.bitmask .bitmask-messages {
+  position: relative;
+  top: 46px;
+  white-space: normal;
+}
+.bitmask .md-checkbox .md-checkbox-label {
+  padding-left: 8px;
+}
+.bitmask > label {
+  position: absolute;
+  top: 23px;
+  left: 0;
+  pointer-events: none;
+  transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 0.3s;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.bitmask.md-required > label:after {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  transform: translateX(calc(100% + 2px));
+  content: "*";
+  line-height: 1em;
+  vertical-align: top;
+  color: var(--md-theme-default-accent);
+}
+.bitmask .md-helper-text,
+.bitmask .md-error {
+  height: 20px;
+  position: absolute;
+  bottom: -22px;
+  font-size: 12px;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bitmask .md-helper-text {
+  color: rgba(0, 0, 0, 0.54);
+}
+.bitmask .md-error {
+  color: var(--md-theme-default-fieldvariant, #ff1744);
+}
+.bitmask .md-input-action {
+  position: absolute;
+  top: 16px;
+  right: 0;
+}
+
+/*# sourceMappingURL=MdBitmask.vue.map */

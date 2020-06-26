@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+	<link rel="stylesheet" href="/assets/md-theme.css">
+	<link rel="stylesheet" href="/md-form.css">
+	<link rel="stylesheet" href="/assets/md-hotelcity.css">
+	<style>
+	.center {
+	    max-width: 1280px;
+	    width: 100%;
+	    -webkit-box-flex: 1;
+	    flex-grow: 1;
+	    margin: 0 auto;
+	    padding: 30px 0 50px;
+	    background: #eef1f1;
+	}
+	.container {
+	    max-width: 1216px;
+	    min-height: calc(100vh - 246px);
+	    margin: 0 auto;
+	    position: relative;
+	    border-radius: 5px;
+	    background: #fff;
+	    padding: 32px;
+	    box-shadow: 0 0 10px 5px #ddd;
+	}
+	</style>
+	<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js" defer></script>
+	<script src="https://unpkg.com/vue-material" defer></script>
+	<script src="https://unpkg.com/vee-validate@3.3.5/dist/vee-validate.full.min.js" defer></script>
+	<script src="/hotelcity.js" defer></script>
+</head>
+<body>
+<div class="center">
+	<div class="container" id="app">
+		<md-form inline-template>
+			<md-form-data ref="formData"
+				action="http://kolsky.keenetic.pro/hotel/addition-post"
+				style="visibility: hidden;">
+				<div class="md-layout md-alignment-center-left">
+					<div class="md-layout-item">
+						<h2>Hotel</h2>
+					</div>
+				</div>
+				<div class="md-layout md-gutter">
+					<div
+						class="md-layout-item md-size-30 md-small-size-50 md-xsmall-size-100">
+						<validation-provider name="Hotel name"
+							rules="required|alpha_spaces|min:3|max:50" v-slot="{ errors }"
+							slim bails>
+							<md-field :class="{ 'md-invalid': errors.length }"
+								md-clearable>
+								<label>Hotel name</label>
+								<md-input :name="'app-model-hotel[name]'"
+									v-model="hotel.name" maxlength="50" required></md-input>
+								<span class="md-helper-text"></span>
+								<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+					<div class="md-layout-item md-size-50 md-small-size-100">
+						<validation-provider name="Address"
+							rules="required" v-slot="{ errors }" slim bails>
+							<md-field :class="{ 'md-invalid': errors.length }"
+								md-clearable>
+								<label>Address</label>
+								<md-input :name="'app-model-hotel[address]'"
+									v-model="hotel.address" maxlength="100" required></md-input>
+								<span class="md-helper-text">Helper text</span>
+								<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+					<div
+						class="md-layout-item md-size-20 md-small-size-50 md-xsmall-size-100">
+						<validation-provider name="Stars"
+							rules="required" v-slot="{ errors, validate }" slim bails>
+							<md-field :class="{ 'md-invalid': errors.length }">
+								<label>Stars</label>
+								<input type="hidden"
+									:name="'app-model-hotel[stars]'"
+									v-model="hotel.stars">
+									<md-select v-model="hotel.stars"
+										md-dense required
+										@input="validate">
+										<md-option v-for="option in $options.starsOption"
+											:value="option.id">{{ option.name }}</md-option>
+									</md-select>
+									<span class="md-helper-text"></span>
+									<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+					<div class="md-layout-item md-size-80 md-small-size-100">
+						<validation-provider name="TripAdvisor URL"
+							rules="" v-slot="{ errors }" slim bails>
+							<md-field :class="{ 'md-invalid': errors.length }"
+								md-clearable>
+								<label>TripAdvisor URL</label>
+								<md-input
+									:name="'app-model-hotel[tripadvisorUrl]'"
+									v-model="hotel.tripadvisorUrl" maxlength="100"></md-input>
+								<span class="md-helper-text">Helper text</span>
+								<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+					<div
+						class="md-layout-item md-size-20 md-small-size-50 md-xsmall-size-100">
+						<validation-provider name="TripAdvisor Rate"
+							rules="" v-slot="{ errors }" slim bails>
+							<md-field :class="{ 'md-invalid': errors.length }"
+								md-clearable>
+								<label>TripAdvisor Rate</label>
+								<md-input
+									:name="'app-model-hotel[tripadvisorScore]'"
+									type="number" v-model="hotel.tripadvisorScore" step="0.5"
+									min="0.5" max="5"></md-input>
+								<span class="md-helper-text">Helper text</span>
+								<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+				</div>
+				<div class="md-layout md-gutter">
+					<div
+						class="md-layout-item md-size-20 md-small-size-30 md-xsmall-size-50">
+						<validation-provider name="Hotel"
+							rules="required|mimes:image/jpeg,image/png,image/gif|size:2000"
+							v-slot="{ errors, validate }" slim bails>
+							<md-field class="img-field"
+								:class="{ 'md-invalid': errors.length }" md-clearable>
+								<label>Hotel</label>
+								<md-image-dropzone v-model="hotel.images[0]"
+									:name="'app-model-hotel[images][0]'" required
+									accept="image/png,image/jpeg,image/gif" max-size="2"
+									@input="validate">
+								</md-image-dropzone>
+								<span class="md-helper-text">The maximum file size is 2 MB. Only image
+									files (JPG, PNG) are allowed.</span>
+								<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+					<div
+						class="md-layout-item md-size-20 md-small-size-30 md-xsmall-size-50">
+						<validation-provider name="Pool"
+							rules="required|mimes:image/jpeg,image/png,image/gif|size:2000"
+							v-slot="{ errors, validate }" slim bails>
+							<md-field class="img-field"
+								:class="{ 'md-invalid': errors.length }" md-clearable>
+								<label>Pool</label>
+								<md-image-dropzone v-model="hotel.images[1]"
+									:name="'app-model-hotel[images][1]'" required
+									accept="image/png,image/jpeg,image/gif" max-size="2"
+									@input="validate">
+								</md-image-dropzone>
+								<span class="md-helper-text"></span>
+								<span class="md-error">{{ errors[0] }}</span>
+							</md-field>
+						</validation-provider>
+					</div>
+				</div>
+				<md-list class="accordion" ref="accordion"
+					:md-expand-single="true">
+					<md-list-item
+						v-for="(listing, index) in hotel.listings" :key="listing.uuid"
+						:md-expanded.sync="listing.activeTab" md-expand>
+						<md-avatar class="md-icon-button md-raised md-accent">{{index + 1}}</md-avatar>
+						<span class="md-list-item-text" v-if="listing.event">{{
+							$options.eventsOption[listing.event].name }}</span>
+						<span class="md-list-item-text" v-else>Same hotel add listing
+						</span>
+						<div class="accordion-content" slot="md-expand">
+							<div class="md-layout md-gutter">
+								<div class="md-layout-item md-size-50 md-small-size-100">
+									<validation-provider name="Event"
+										rules="required" v-slot="{ errors, validate }" slim bails>
+										<md-field :class="{ 'md-invalid': errors.length }">
+											<label>Event</label>
+											<input type="hidden"
+												:name="'app-model-hotel[listings]['+index+'][event]'"
+												v-model="hotel.listings[index].event">
+												<md-select v-model="hotel.listings[index].event"
+													md-dense required
+													@input="validate">
+													<md-option
+														v-for="option in $options.eventsOption"
+														:value="option.id">{{ option.name }}</md-option>
+												</md-select>
+												<span class="md-helper-text"></span>
+												<span class="md-error">{{ errors[0] }}</span>
+										</md-field>
+									</validation-provider>
+								</div>
+							</div>
+							<div class="md-layout md-gutter md-alignment-center-left">
+								<div class="md-layout-item md-size-33 md-small-size-100">
+									<validation-provider name="Start date"
+										rules="required" v-slot="{ errors }" slim bails>
+										<md-datepicker class="md-required"
+											v-model="hotel.listings[index].startDate"
+											:class="{ 'md-invalid': errors.length }" md-immediately>
+											<label>Start date</label>
+											<span class="md-helper-text">Local time</span>
+											<span class="md-error">{{ errors[0] }}</span>
+											<input type="hidden"
+												:name="'app-model-hotel[listings]['+index+'][startDate]'"
+												:value="hotel.listings[index].startDate" />
+										</md-datepicker>
+									</validation-provider>
+								</div>
+								<div class="md-layout-item md-size-33 md-small-size-100">
+									<validation-provider name="End date"
+										rules="" v-slot="{ errors }" slim bails>
+										<md-datepicker
+											v-model="hotel.listings[index].endDate"
+											:class="{ 'md-invalid': errors.length }" md-immediately>
+											<label>End date</label>
+											<span class="md-helper-text">Local time</span>
+											<span class="md-error">{{ errors[0] }}</span>
+											<input type="hidden"
+												:name="'app-model-hotel[listings]['+index+'][endDate]'"
+												:value="hotel.listings[index].endDate" />
+										</md-datepicker>
+									</validation-provider>
+								</div>
+								<div class="md-layout-item md-size-34 md-small-size-100">
+									<md-switch v-model="hotel.listings[index].anyDate">Client can choose any date
+									</md-switch>
+								</div>
+							</div>
+							<div class="spacer"><!-- -->
+							</div>
+							<div
+								class="md-steppers md-dynamic-height accordion-content-section"
+								v-for="type in $options.roomTypesAvailable"
+								:key="listing.uuid+type.code">
+								<div class="md-list-item-content">
+									<md-button class="md-fab md-mini md-accent"
+										v-if="listing.roomTypes[type.code]"
+										@click="removeRoomType(listing,type.code)">
+										<md-icon>remove</md-icon>
+									</md-button>
+									<md-button class="md-fab md-mini md-accent" v-else
+										@click="addRoomType(listing,type.code)">
+										<md-icon>add</md-icon>
+									</md-button>
+									<span class="md-list-item-text">{{ type.name }}</span>
+								</div>
+								<div class="md-layout md-gutter md-steppers-wrapper"
+									v-if="listing.roomTypes[type.code]">
+									<div
+										class="md-layout-item md-size-20 md-small-size-30 md-xsmall-size-50">
+										<validation-provider name="Room"
+											rules="mimes:image/jpeg,image/png,image/gif|size:2000"
+											v-slot="{ errors, validate }" slim bails>
+											<md-field class="img-field"
+												:class="{ 'md-invalid': errors.length }" md-clearable>
+												<label>Room</label>
+												<md-image-dropzone
+													v-model="hotel.listings[index].roomTypes[type.code].previewImage"
+													:name="'app-model-hotel[listings]['+index+'][roomTypes]['+type.code+'][previewImage]'"
+													accept="image/png,image/jpeg,image/gif" max-size="2"
+													@input="validate">
+												</md-image-dropzone>
+												<span class="md-helper-text">The maximum file size is 2 MB. Only image
+													files (JPG, PNG) are allowed.</span>
+												<span class="md-error">{{ errors[0] }}</span>
+											</md-field>
+										</validation-provider>
+									</div>
+									<div
+										class="md-layout-item md-size-40 md-small-size-50 md-xsmall-size-100">
+										<validation-provider name="Facilities"
+											rules="" v-slot="{ errors, validate }" slim bails>
+											<md-bitmask
+												:name="'app-model-hotel[listings]['+index+'][roomTypes]['+type.code+'][features]'"
+												v-model="hotel.listings[index].roomTypes[type.code].features"
+												v-slot="{ values, disabled }"
+												@input="validate"
+												md-clearable>
+												<label>Facilities</label>
+												<div class="bitmask-checkboxes">
+													<md-checkbox
+														v-for="feature in listing.roomTypes[type.code].featuresAvailable"
+														v-model="values"
+														:key="listing.uuid+type.code+feature.code"
+														:value="feature.value" :disabled="disabled">{{feature.name}}
+													</md-checkbox>
+												</div>
+												<div class="bitmask-messages">
+													<span class="md-helper-text">Helper text</span>
+													<span class="md-error">{{ errors[0] }}</span>
+												</div>
+											</md-bitmask>
+										</validation-provider>
+									</div>
+									<div class="md-layout-item md-size-40 md-small-size-100">
+										<div class="md-layout md-gutter md-alignment-top-right">
+											<div class="md-layout-item md-size-100 md-small-size-50">
+												<validation-provider name="Bed"
+													rules="required" v-slot="{ errors, validate }" slim bails>
+													<md-field
+														:class="{ 'md-invalid': errors.length }">
+														<label>Bed</label>
+														<input type="hidden"
+															:name="'app-model-hotel[listings]['+index+'][roomTypes]['+type.code+'][bedSize]'"
+															v-model="hotel.listings[index].roomTypes[type.code].bedSize">
+															<md-select
+																v-model="hotel.listings[index].roomTypes[type.code].bedSize"
+																md-dense required
+																@input="validate">
+																<md-option
+																	v-for="option in $options.bedOption"
+																	:value="option.id">{{ option.name }}</md-option>
+															</md-select>
+															<span class="md-helper-text">Helper text</span>
+															<span class="md-error">{{ errors[0] }}</span>
+													</md-field>
+												</validation-provider>
+											</div>
+											<div class="md-layout-item md-size-100 md-small-size-50">
+												<validation-provider name="Amount"
+													rules="required|integer" v-slot="{ errors }" slim bails>
+													<md-field
+														:class="{ 'md-invalid': errors.length }" md-clearable>
+														<label>Amount</label>
+														<md-input
+															:name="'app-model-hotel[listings]['+index+'][roomTypes]['+type.code+'][amount]'"
+															type="number"
+															v-model="hotel.listings[index].roomTypes[type.code].amount"
+															step="1" min="1" max="100" required></md-input>
+														<span class="md-helper-text">Helper text</span>
+														<span class="md-error">{{ errors[0] }}</span>
+													</md-field>
+												</validation-provider>
+											</div>
+											<div class="md-layout-item md-size-100 md-small-size-50">
+												<validation-provider name="Price"
+													rules="required|integer" v-slot="{ errors }" slim bails>
+													<md-field
+														:class="{ 'md-invalid': errors.length }" md-clearable>
+														<label>Price</label>
+														<md-input
+															:name="'app-model-hotel[listings]['+index+'][roomTypes]['+type.code+'][price]'"
+															type="number"
+															v-model="hotel.listings[index].roomTypes[type.code].price"
+															step="1" min="1" max="1000000" required></md-input>
+														<span class="md-helper-text">Helper text</span>
+														<span class="md-error">{{ errors[0] }}</span>
+													</md-field>
+												</validation-provider>
+											</div>
+										</div>
+									</div>
+									<div class="md-layout-item md-size-70 md-small-size-100"
+										v-if="type.code == 'suite'">
+										<validation-provider name="Description"
+											rules="max:5000" v-slot="{ errors }" slim bails>
+											<md-field :class="{ 'md-invalid': errors.length }"
+												md-clearable>
+												<label>Description</label>
+												<md-textarea
+													:name="'app-model-hotel[listings]['+index+'][roomTypes]['+type.code+'][description]'"
+													v-model="hotel.listings[index].roomTypes[type.code].description"></md-textarea>
+												<md-icon>description</md-icon>
+												<span class="md-helper-text"></span>
+												<span class="md-error">{{ errors[0] }}</span>
+											</md-field>
+										</validation-provider>
+									</div>
+								</div>
+							</div>
+							<div class="md-layout md-gutter">
+								<div class="md-layout-item md-size-100">
+									<md-button class="md-raised md-primary"
+										v-if="isLastListing(index)"
+										@click="addListing()">Add one more
+									</md-button>
+									<md-button class="md-raised md-primary"
+										v-if="canRemoveListing()"
+										@click="removeListing(index, 'app-model-hotel-listing-' + index)">Remove listing
+									</md-button>
+								</div>
+							</div>
+						</div>
+					</md-list-item>
+				</md-list>
+				<div class="btn-container">
+					<md-button type="button"
+						class="md-raised btn-orange btn-outlined">Cancel</md-button>
+					<md-button type="submit" class="md-raised btn-orange">List my hotel</md-button>
+				</div>
+			</md-form-data>
+		</md-form>
+	</div>
+</div>
+<script>
+window.app = {
+	data: {
+		 hotel: {
+        	name: null,
+        	address: null,
+        	tripadvisorUrl: null,
+        	tripadvisorScore: null,
+        	stars: 5,
+        	images: [],
+        	listings: []
+    	}
+	},
+
+	options: {
+		localeUrl: "/assets/form/locale",
+		starsOption: [
+    		{id: "", name: ""},
+    		{id: 1, name: "⭑"},
+    		{id: 2, name: "⭑ ⭑"},
+    		{id: 3, name: "⭑ ⭑ ⭑"},
+    		{id: 4, name: "⭑ ⭑ ⭑ ⭑"},
+    		{id: 5, name: "⭑ ⭑ ⭑ ⭑ ⭑"}
+    	],
+    	bedOption: [
+    		{id: "", name: ""},
+    		{id: "king", name: "King"},
+    		{id: "queen", name: "Queen"},
+    		{id: "double", name: "Double"}
+    	],
+    	eventsOption: [
+    		{id: "", name: ""},
+    		{id: "1", name: "First event name"},
+    		{id: "2", name: "Second event"},
+    		{id: "3", name: "Next event"},
+    		{id: "4", name: "Much more event"},
+        ],
+		listing: {
+    		event: null,
+    		startDate: null,
+    		endDate: null,
+    		anyDate: false,
+    		roomTypes: {},
+    	},
+    	roomTypesAvailable: {
+    		single: {
+            	code: 'single',
+            	name: 'Single room',
+            	previewImage: null,
+            	bedSize: null,
+            	amount: null,
+            	price: null,
+            	features: 0,
+            	featuresAvailable: [
+            		{code: 'breakfast', name: 'Breakfast', value: 2},
+            		{code: 'wifi', name: 'Wi-fi', value: 4},
+            		{code: 'conditioning', name: 'Air conditioning', value: 8},
+            		{code: 'ocean', name: 'Ocean view', value: 16},
+            		{code: 'partialocean', name: 'Partial ocean view', value: 32}
+                ]
+            },
+            double: {
+            	code: 'double',
+            	name: 'Double room',
+            	previewImage: null,
+            	bedSize: null,
+            	amount: null,
+            	price: null,
+            	features: 0,
+            	featuresAvailable: [
+            		{code: 'breakfast', name: 'Breakfast', value: 2},
+            		{code: 'wifi', name: 'Wi-fi', value: 4},
+            		{code: 'conditioning', name: 'Air conditioning', value: 8},
+            		{code: 'ocean', name: 'Ocean view', value: 16},
+            		{code: 'partialocean', name: 'Partial ocean view', value: 32},
+            		{code: 'twobeds', name: 'Two beds', value: 64}
+                ]
+            },
+            triple: {
+            	code: 'triple',
+            	name: 'Triple room',
+            	previewImage: null,
+            	bedSize: null,
+            	amount: null,
+            	price: null,
+            	features: 0,
+            	featuresAvailable: [
+            		{code: 'breakfast', name: 'Breakfast', value: 2},
+            		{code: 'wifi', name: 'Wi-fi', value: 4},
+            		{code: 'conditioning', name: 'Air conditioning', value: 8},
+            		{code: 'ocean', name: 'Ocean view', value: 16},
+            		{code: 'partialocean', name: 'Partial ocean view', value: 32}
+                ]
+            },
+            quadruple: {
+            	code: 'quadruple',
+            	name: 'Quadruple room',
+            	previewImage: null,
+            	bedSize: null,
+            	amount: null,
+            	price: null,
+            	features: 0,
+            	featuresAvailable: [
+            		{code: 'breakfast', name: 'Breakfast', value: 2},
+            		{code: 'wifi', name: 'Wi-fi', value: 4},
+            		{code: 'conditioning', name: 'Air conditioning', value: 8},
+            		{code: 'ocean', name: 'Ocean view', value: 16},
+            		{code: 'partialocean', name: 'Partial ocean view', value: 32}
+                ]
+            },
+            suite: {
+            	code: 'suite',
+            	name: 'Suite',
+            	previewImage: null,
+            	bedSize: null,
+            	amount: null,
+            	price: null,
+            	description: null,
+            	features: 0,
+            	featuresAvailable: [
+            		{code: 'breakfast', name: 'Breakfast', value: 2},
+            		{code: 'wifi', name: 'Wi-fi', value: 4},
+            		{code: 'conditioning', name: 'Air conditioning', value: 8},
+            		{code: 'ocean', name: 'Ocean view', value: 16},
+            		{code: 'partialocean', name: 'Partial ocean view', value: 32},
+            		{code: 'twobeds', name: 'Two beds', value: 64},
+            		{code: 'sofabed', name: 'Sofa bed', value: 128},
+            		{code: 'twobedrooms', name: 'Two bedrooms', value: 256},
+                ]
+            }
+    	}
+	}
+}
+</script>
+</body>
+</html>

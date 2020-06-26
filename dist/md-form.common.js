@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function createCommonjsModule(fn, basedir, module) {
@@ -35,7 +39,7 @@ var vue2Dropzone = createCommonjsModule(function (module, exports) {
 //
 
 var script = {
-	name: "ItacesFormData",
+	name: "MdFormData",
 	props: {
 		name: String,
 
@@ -351,7 +355,7 @@ __vue_render__._withStripped = true;
 //
 
 var script$1 = {
-	name: "ItacesImageDropzone",
+	name: "MdImageDropzone",
 	props: {
 		placeholder: {
 			type: String,
@@ -800,7 +804,7 @@ __vue_render__$1._withStripped = true;
 //
 
 var script$2 = {
-	name: "ItacesBitmask",
+	name: "MdBitmask",
 	props: {
 		id: {
 			type: String,
@@ -1029,12 +1033,12 @@ Vue.use(VueMaterial.default);
 Vue.component('validation-provider', VeeValidate.ValidationProvider);
 Vue.component('validation-observer', VeeValidate.ValidationObserver);
 Vue.component('vue-dropzone', vue2Dropzone);
-Vue.component('itaces-form-data', __vue_component__);
-Vue.component('itaces-image-dropzone', __vue_component__$1);
-Vue.component('itaces-bitmask', __vue_component__$2);
+Vue.component('md-form-data', __vue_component__);
+Vue.component('md-image-dropzone', __vue_component__$1);
+Vue.component('md-bitmask', __vue_component__$2);
 
 var script$3 = Object.assign(window.app.options, {
-	name: "ItacesForm",
+	name: "MdForm",
 
 	data: function () {
 		return window.app.data
@@ -1115,7 +1119,7 @@ const __vue_script__$3 = script$3;
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('ItacesForm', __vue_component__$3);
+  Vue.component('MdForm', __vue_component__$3);
 }
 
 // Создание значения модуля для Vue.use()
@@ -1134,5 +1138,5 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-export default __vue_component__$3;
-export { install };
+exports.default = __vue_component__$3;
+exports.install = install;

@@ -1,0 +1,138 @@
+.md-disabled {
+  opacity: 0.5;
+}
+
+/*** Form container ***/
+
+.md-theme-default .container {
+  max-width: 1216px;
+  min-height: calc(100vh - 246px);
+  margin: 0 auto;
+  position: relative;
+  border-radius: 5px;
+  background: #fff;
+  padding: 32px;
+  box-shadow: 0 0 10px 5px #ddd;
+}
+
+/*** Replacement primary styles on focus ***/
+
+/*** 
+.md-field.md-theme-default:before {
+	background-color: rgba(0, 0, 0, 0.42);
+}
+
+.md-field.md-theme-default.md-focused label {
+	color: rgba(0, 0, 0, 0.42);
+}
+ ***/
+
+/*** Accordion styles ***/
+
+.md-list.accordion .spacer {
+  height: 24px;
+}
+
+.md-list.accordion .accordion-content {
+  padding: 16px 0;
+}
+
+.md-list.accordion .accordion-content-section .md-list-item-content {
+  padding-left: 8px;
+}
+
+.md-list.accordion .md-list-item-container {
+  white-space: normal;
+}
+
+.md-list.accordion .md-list-item-container:not(.md-list-item-default):not([disabled]) > .md-list-item-content {
+  box-shadow: inset 0 0 20px 20px #eef1f1;
+}
+
+.md-list.accordion .md-button.md-theme-default.md-fab:not([disabled]) .md-icon-font {
+  color: white;
+}
+
+.md-list.accordion .md-avatar.md-avatar-icon,
+.md-list.accordion .md-avatar.md-icon-button {
+  color: white;
+}
+
+.md-list.accordion .md-avatar.md-avatar-icon.md-raised,
+.md-list.accordion .md-avatar.md-icon-button.md-raised {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+}
+
+/*** Buttons ***/
+
+.md-theme-default .btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.md-theme-default .btn-container .md-button:last-child {
+  margin-right: 0;
+}
+
+.md-theme-default .md-button .md-button-content {
+  display: flex;
+  align-items: center;
+}
+
+.md-theme-default .md-fab,
+.md-theme-default .md-icon-button {
+  z-index: 1;
+}
+
+.md-theme-default .btn-back svg {
+  margin-right: 9px;
+}
+
+.md-theme-default .btn-back .md-ripple {
+  padding-right: 0px;
+}
+
+.md-theme-default h2 {
+  display: inline-block;
+}
+
+.md-theme-default h2,
+.md-theme-default .btn-back,
+.md-theme-default .btn-orange,
+.md-theme-default .btn-orange .btn-outlined {
+  outline: none;
+  font-family: SourceSansPro-SemiBold,sans-serif;
+  font-weight: 600;
+  letter-spacing: .02em;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.md-theme-default .btn-orange,
+.md-theme-default .btn-orange .btn-outlined {
+  height: 53px;
+  /*border-radius: 5px;*/
+}
+
+.md-theme-default .btn-orange .md-ripple,
+.md-theme-default .btn-orange .btn-outlined .md-ripple {
+  padding: 14px 26px;
+}
+
+.md-theme-default .btn-orange,
+.md-theme-default .md-button.md-theme-default.md-raised:not([disabled]).btn-orange {
+  background: var(--md-theme-default-accent);
+  background-color: var(--md-theme-default-accent);
+  color: #fff;
+}
+
+.md-theme-default .btn-outlined,
+.md-theme-default .md-button.md-theme-default.md-raised:not([disabled]).btn-outlined {
+  background: #fff;
+  background-color: #fff;
+  border: 1px solid var(--md-theme-default-accent);
+  color: var(--md-theme-default-accent);
+}
+

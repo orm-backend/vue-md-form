@@ -1,20 +1,20 @@
 <script>
 import vue2Dropzone from 'vue2-dropzone'
-import FormData from './ItacesFormData.vue'
-import ImageDropzone from './ItacesImageDropzone.vue'
-import Bitmask from './ItacesBitmask.vue'
+import FormData from './MdFormData.vue'
+import ImageDropzone from './MdImageDropzone.vue'
+import Bitmask from './MdBitmask.vue'
 
 Vue.use(VueMaterial.default)
 
 Vue.component('validation-provider', VeeValidate.ValidationProvider)
 Vue.component('validation-observer', VeeValidate.ValidationObserver)
 Vue.component('vue-dropzone', vue2Dropzone)
-Vue.component('itaces-form-data', FormData)
-Vue.component('itaces-image-dropzone', ImageDropzone)
-Vue.component('itaces-bitmask', Bitmask)
+Vue.component('md-form-data', FormData)
+Vue.component('md-image-dropzone', ImageDropzone)
+Vue.component('md-bitmask', Bitmask)
 
 export default Object.assign(window.app.options, {
-	name: "ItacesForm",
+	name: "MdForm",
 
 	data: function () {
 		return window.app.data

@@ -1,0 +1,21 @@
+/*
+* @Author: Vitaliy Kovalenko
+* @Date:   2020-06-18 19:56:01
+* @Last Modified by:   Vitaliy Kovalenko
+* @Last Modified time: 2020-06-18 19:56:36
+*/
+@import "~vue-material/dist/vue-material.css";
+@import "~vue-material/dist/theme/palette";
+@import "~vue-material/dist/theme/functions";
+@import "~vue-material/dist/theme/variables";
+@import "~vue-material/dist/theme/color-contrast";
+@import "./md-mixins";
+
+/*@import "~vue-material/dist/theme/engine";*/
+
+@include md-register-theme("default", (
+	primary: #517ebb, // The primary color of your application
+	accent: #ff8a00 // The accent or secondary color
+));
+
+@import "~vue-material/dist/theme/all";
