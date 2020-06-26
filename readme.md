@@ -1,5 +1,7 @@
 # Extensions for Vue Material
 
+![Screenshot](Screenshot.png)
+
  * Server-side template creation [inline-template](https://vuejs.org/v2/guide/components-edge-cases.html#Inline-Templates)
  * Server-side localization
  * Single image field with dropzone support
