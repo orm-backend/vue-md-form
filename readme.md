@@ -145,7 +145,7 @@ window.app = {
 
 Entry point script app.js
 
-```javaScript
+```HTML
 <script src="/js/aap.js" defer></script>
 ```
 
