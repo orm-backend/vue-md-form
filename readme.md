@@ -13,7 +13,7 @@
 
  * [vue-material](https://github.com/vuematerial/vue-material)
  * [vee-validate](https://github.com/logaretm/vee-validate)
- * [vue2-dropzone](https://github.com/rowanwins/vue-dropzone) included in production script
+ * [vue2-dropzone](https://github.com/rowanwins/vue-dropzone) included in production build
 
 ## Browser support
 
@@ -39,7 +39,7 @@ mix.copy('node_modules/vue-md-form/dist/md-form.min.js', 'public/assets/js/md-fo
 mix.copy('node_modules/vue-md-form/dist/md-form.css', 'public/assets/css/md-form.css')
 ```
 
-<sup>Pre-built scripts and styles located in node_modules/vue-md-form/dist directory</sup>
+_Pre-built scripts and styles located in node_modules/vue-md-form/dist directory_
 
 ## Example usage
 
@@ -143,7 +143,7 @@ window.app = {
 <script src="/assets/js/md-form.min.js" defer></script>
 ```
 
-Include form initialisation script aap.js
+Entry point script app.js
 
 ```javaScript
 <script src="/js/aap.js" defer></script>
@@ -209,6 +209,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
 
-<sup>See example inside package</sup>
+_See example inside package_
 
 
