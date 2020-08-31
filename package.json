@@ -55,6 +55,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org:vitaliy_kovalenko/vue-md-form.git"
+    "url": "git+ssh://git@github.com:orm-backend/vue-md-form.git"
   }
 }
