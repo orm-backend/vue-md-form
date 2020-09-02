@@ -2,11 +2,7 @@
   "name": "vue-md-form",
   "description": "Dropzone, Bitmask field and form validation. Server side template support.",
   "version": "1.0.0",
-  "author": {
-    "name": "Vitaliy Kovalenko",
-    "email": "vvk@kola.cloud"
-  },
-  "private": true,
+  "author": "Vitaliy Kovalenko <vvk@kola.cloud>",
   "license": "MIT",
   "main": "dist/md-form.common.js",
   "module": "dist/md-form.esm.js",
